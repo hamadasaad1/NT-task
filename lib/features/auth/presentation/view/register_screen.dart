@@ -64,7 +64,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   Widget buildMobileView() {
     return Scaffold(
-      backgroundColor: ColorManager.background,
+      // backgroundColor: ColorManager.background,
       body: BlocProvider<AuthCubit>(
         create: (context) {
           _viewModel = AuthCubit();
@@ -116,15 +116,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         const SizedBox(height: AppPadding.p32),
                         Text(
                           "Hi There!",
-                          style: getBoldStyle(
-                            fontSize: FontSize.s24,
-                            color: ColorManager.textHeaderColor,
-                          ),
+                          style: Theme.of(context).textTheme.titleLarge?.copyWith( fontSize:  FontSize.s24),
                         ),
                         Text(
                           "Sign up to your account",
-                          style: getRegularStyle(
-                              color: ColorManager.textSubTitleColor),
+                          style: Theme.of(context).textTheme.bodySmall,
                         ),
                         const SizedBox(height: AppPadding.p24),
 

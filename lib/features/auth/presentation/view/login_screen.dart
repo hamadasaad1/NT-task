@@ -88,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
         return true;
       },
       child: Scaffold(
-        backgroundColor: ColorManager.background,
+        // backgroundColor: ColorManager.background,
         body: BlocProvider<AuthCubit>(
           create: (context) {
             _viewModel = AuthCubit();
@@ -142,15 +142,11 @@ class _LoginScreenState extends State<LoginScreen> {
                           const SizedBox(height: AppPadding.p32),
                           Text(
                             "Hi There!",
-                            style: getBoldStyle(
-                              fontSize: FontSize.s24,
-                              color: ColorManager.textHeaderColor,
-                            ),
+                            style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize:  FontSize.s24)
                           ),
                           Text(
                             "Welcome back, Let's get you logged in",
-                            style: getRegularStyle(
-                                color: ColorManager.textSubTitleColor),
+                            style: Theme.of(context).textTheme.bodyMedium
                           ),
                           const SizedBox(height: AppPadding.p24),
                           TextFieldWithTitle(
@@ -190,7 +186,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 children: [
                                   TextSpan(
                                     text: 'Don\'t have an account ? ',
-                                    style: getRegularStyle(),
+                                    style: Theme.of(context).textTheme.bodyMedium,
                                   ),
                                   TextSpan(
                                     text: 'Sign up',

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import '../../../app/media/media_service_interface.dart';
-import '../../resources/styles_manager.dart';
 
 class ImagePickerActionSheet extends StatelessWidget {
   @override
@@ -11,14 +11,14 @@ class ImagePickerActionSheet extends StatelessWidget {
         CupertinoActionSheetAction(
           child: Text(
             'Camera',
-            style: getRegularStyle(),
+            style: Theme.of(context).textTheme.bodyMedium,
           ),
           onPressed: () => Navigator.of(context).pop(AppImageSource.camera),
         ),
         CupertinoActionSheetAction(
           child: Text(
             'Gallery',
-            style: getRegularStyle(),
+          style: Theme.of(context).textTheme.bodyMedium,
           ),
           onPressed: () => Navigator.of(context).pop(AppImageSource.gallery),
         ),
@@ -26,7 +26,7 @@ class ImagePickerActionSheet extends StatelessWidget {
       cancelButton: CupertinoActionSheetAction(
         child: Text(
           'Cancel',
-          style: getRegularStyle(),
+          style: Theme.of(context).textTheme.bodySmall,
         ),
         onPressed: () => Navigator.of(context).pop(),
       ),
